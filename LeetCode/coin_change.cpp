@@ -9,41 +9,28 @@ class Solution
 public:
     int coinChange(vector<int>& coins, int amount)
     {
-        vector<int> dp(amount + 1, amount);
+        if (amount == 0)
+        {
+            return 0;
+        }
+
+        vector<int> dp(amount + 1, amount + 1);
         dp[0] = 0;
 
-        for (int i = 0; i <= amount; i++)
+        for (int i = 1; i <= amount; i++)
         {
             for (int j = 0; j < coins.size(); j++)
             {
                 int prev = i - coins[j];
 
-                if (prev < 0)
-                {
-                    prev = 0;
-                }
-
-                if (coins[j] <= i)
+                if (prev >= 0 && dp[prev] != amount + 1)
                 {
                     dp[i] = std::min(dp[prev] + 1, dp[i]);
                 }
             }
         }
 
-        if (dp[amount] == amount && dp.size() > 1)
-        {
-            for (int i = 0; i < coins.size(); i++)
-            {
-                if (coins[i] == 1)
-                {
-                    return amount;
-                }
-            }
-
-            return -1;
-        }
-
-        return dp[amount];
+        return dp[amount] == amount + 1 ? -1 : dp[amount];
     }
 };
 
@@ -52,7 +39,7 @@ int main()
     // Coin Change
     // Difficulty: Medium
 
-    vector<int> coins = { 1, 2, 5 };
+    vector<int> coins = { 2 };
     int amount = 11;
 
     Solution solution;
