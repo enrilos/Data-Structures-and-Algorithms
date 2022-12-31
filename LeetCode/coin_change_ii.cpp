@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <vector>
 
 using std::vector;
@@ -7,7 +6,7 @@ using std::vector;
 class Solution
 {
 public:
-    int change(int amount, vector<int>& coins)
+    int change(int amount, vector<int> &coins)
     {
         const int rows = coins.size();
 
@@ -29,7 +28,7 @@ public:
                     dp[row][col] = dp[row - 1][col];
                     continue;
                 }
-                
+
                 dp[row][col] = dp[row - 1][col] + dp[row][prev];
             }
         }
@@ -44,7 +43,7 @@ int main()
     // Difficulty: Medium
 
     int amount = 5;
-    vector<int> coins = { 1, 2, 5 };
+    vector<int> coins = {1, 2, 5};
 
     Solution solution;
     std::cout << solution.change(amount, coins) << std::endl;

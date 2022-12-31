@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <vector>
 
 using std::vector;
@@ -7,7 +6,7 @@ using std::vector;
 class Solution
 {
 public:
-    int coinChange(vector<int>& coins, int amount)
+    int coinChange(vector<int> &coins, int amount)
     {
         if (amount == 0)
         {
@@ -39,7 +38,7 @@ int main()
     // Coin Change
     // Difficulty: Medium
 
-    vector<int> coins = { 2 };
+    vector<int> coins = {2};
     int amount = 11;
 
     Solution solution;

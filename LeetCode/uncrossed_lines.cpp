@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <vector>
 
 using std::vector;
@@ -7,7 +6,7 @@ using std::vector;
 class Solution
 {
 public:
-    int maxUncrossedLines(vector<int>& setOne, vector<int>& setTwo)
+    int maxUncrossedLines(vector<int> &setOne, vector<int> &setTwo)
     {
         int setOneSize = setOne.size();
         int setTwoSize = setTwo.size();
@@ -41,8 +40,8 @@ int main()
     // Uncrossed Lines
     // Difficulty: Medium
 
-    vector<int> setOne = { 2, 5, 1, 2, 5 };
-    vector<int> setTwo = { 10, 5, 2, 1, 5, 2 };
+    vector<int> setOne = {2, 5, 1, 2, 5};
+    vector<int> setTwo = {10, 5, 2, 1, 5, 2};
 
     Solution solution;
     std::cout << solution.maxUncrossedLines(setOne, setTwo) << std::endl;
