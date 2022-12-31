@@ -32,7 +32,7 @@ public:
         int size = nums.size();
         vector<int> perms(size);
         vector<bool> used(size);
-        vector<vector<int>> results(!size, vector<int>(size, 0));
+        vector<vector<int>> results(0, vector<int>(size, 0));
 
         this->uniquePerms(0, nums, perms, used, results);
         return results;
